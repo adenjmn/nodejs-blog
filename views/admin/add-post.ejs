@@ -1,0 +1,37 @@
+<a href="/dashboard">&larr; Back to menu admin</a>
+
+<form action="/add-post" method="POST" id="regForm">
+  <div class="admin-title">
+    <h2>Add New Post</h2>
+  </div>
+  <div class="tab">
+    <div class="mb-3">
+      <label for="title"><b>Author</b></label>
+      <input type="text" name="author" value="<%= account.fullName %>" readonly />
+    </div>
+    <label for="title"><b>Title</b></label>
+    <input type="text" placeholder="Post Title" name="title">
+  </div>
+  <div class="tab">
+    <label for="category"><b>Category</b></label>
+    <input type="text" placeholder="Post Category" name="topic">
+  </div>
+  <div class="tab">
+    <label for="floatingTextarea"><b>Content</b></label>
+    <textarea class="form-control" name="body" cols="50" rows="5" id="floatingTextarea"></textarea>
+  </div>
+  <div style="overflow:auto;">
+    <div style="float:right;">
+      <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+      <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+    </div>
+  </div>
+
+  <!-- Circles which indicates the steps of the form: -->
+  <div style="text-align:center;margin-top:40px;">
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+  </div>
+
+</form>

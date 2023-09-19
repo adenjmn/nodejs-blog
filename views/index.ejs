@@ -1,0 +1,49 @@
+<section id="focus" class="focus-section">
+  <div class="container-lg py-5">
+      <div class="container px-0">
+          <div class="row">
+              <div class="col">
+                  <h2 class="title-section">News</h2>
+              </div>
+          </div>
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+          <% data.forEach(post=> { %>
+              <div class="col">
+                  <div class="card shadow-sm h-100">
+                      <div class="card-image">
+                          <div class="hover-text">
+                              <img src="https://source.unsplash.com/user/xteemu/800x600" class="card-img-top"
+                                  alt="..." />
+                          </div>
+                          <div class="image-overlay"></div>
+                      </div>
+                      <div class="card-body">
+                          <a href="/post/<%= post._id %>" class="card-title">
+                              <h3 class="card-title">
+                                  <%= post.title %>
+                              </h3>
+                          </a>
+                          <p class="card-text">
+                              <%= post.body %>
+                          </p>
+                      </div>
+
+                      <div class="card-footer py-3">
+                          <div class="card-footer__info">
+                              <span><i class="far fa-calendar-alt"></i>
+                                  <%= post.createdAt.toDateString() %>
+                              </span>
+                              <span class="read-more">
+                                  <a class="text-uppercase read-more-1" href="/post/<%= post._id %>">Read more
+                                  </a>
+                              </span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <% }) %>
+      </div>
+  </div>
+</section>

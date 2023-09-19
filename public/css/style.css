@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url("https://use.fontawesome.com/releases/v5.13.0/css/all.css");
+
+:root {
+    --black: #1c1c1c;
+    --yellow: #FFD523;
+    --red: red;
+    --grey: #B2B1B9;
+
+    --bg-ft-col-1: #0059b3;
+    --tx-ft-color-1: #fff;
+    --tx-focus-section-title: #212529;
+    --bg-focus-card-overlay: rgba(0, 89, 179, 0.5);
+    --tx-focus-hover: #fff;
+    --tx-focus-font-weight: 400;
+    --tx-focus-tag-color-1: #fff;
+    --bg-focus-tag-color-1: #0059b3;
+    --bg-focus-cat: #0059b3;
+    --tx-focus-cat: #fff;
+    --bg-focus-footer: #0059b3;
+    --tx-focus-footer: #fff;
+    --bg-focus-card: #fff;
+    --tx-focus-card: #000;
+    --tx-button: #fff;
+    --bg-button: #0059b3;
+}
+
+body {
+    /* font-family: 'Mooli', sans-serif; */
+    color: var(--black);
+}
+
+.navbar {
+    background-color: var(--black);
+}
+
+.navbar-brand {
+    font-family: 'Satisfy', cursive;
+    width: 170px;
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    opacity: 0;
+    transition: all 0.2s;
+    height: 2px;
+    width: 100%;
+    background-color: var(--bg-focus-cat);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.nav-link:hover::after {
+    opacity: 1;
+}
+
+/* card */
+.focus-section {
+    font-family: var(--font1);
+    -webkit-transition: all 0.3s linear 0s;
+    transition: all 0.3s linear 0s;
+}
+
+.focus-section .title-section {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--tx-focus-section-title);
+}
+
+.focus-section .card {
+    font-size: 1rem;
+    border: var(--focus-border-card);
+}
+
+.focus-section .card .card-body {
+    background: var(--bg-focus-card);
+    color: var(--tx-focus-card);
+}
+
+.focus-section .card .card-body .card-text {
+    font-weight: var(--tx-focus-font-weight);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    display: -webkit-box;
+    display: -moz-box;
+    line-height: normal;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    -moz-line-clamp: 3;
+}
+
+.focus-section .card .card-image {
+    position: relative;
+}
+
+.focus-section .card .card-image .image-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.5s ease;
+    background: var(--bg-focus-card-overlay);
+}
+
+.focus-section .card .card-image:hover .image-overlay {
+    opacity: 1;
+}
+
+.focus-section .card .text-img-over {
+    position: relative;
+}
+
+.focus-section .card .text-img-over .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.5s ease;
+    background: var(--bg-focus-card-overlay);
+}
+
+.focus-section .card .text-img-over:hover .overlay {
+    opacity: 1;
+}
+
+.focus-section .card .social-hover {
+    color: var(--tx-focus-hover);
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.focus-section .card .social-hover .fa-share-alt {
+    color: var(--tx-focus-hover);
+}
+
+.focus-section .card .social-hover .fa-share-alt:hover {
+    color: var(--tx-color-1);
+}
+
+.focus-section .card .hover-text {
+    position: relative;
+    text-align: center;
+    color: var(--tx-focus-hover);
+}
+
+.focus-section .card .sub-cat {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.focus-section .card .sub-cat .bg-category {
+    background: var(--bg-focus-cat);
+    color: var(--tx-focus-cat);
+}
+
+.focus-section .card .card-body a {
+    color: var(--tx-focus-tag-a);
+    text-decoration: none;
+}
+
+.focus-section .card .card-title {
+    font-family: var(--font1);
+    font-weight: 600;
+    font-size: 1.3rem;
+    /* height: 73px;
+    overflow: hidden; */
+}
+
+.focus-section .card .card-footer {
+    background: var(--bg-focus-footer);
+    color: var(--tx-focus-footer);
+}
+
+.focus-section .card .card-footer .card-footer__info {
+    font-size: 1rem;
+    font-weight: 300;
+    position: relative;
+}
+
+.focus-section .card .read-more {
+    position: absolute;
+    right: 0;
+    font-weight: 600;
+}
+
+.focus-section .card .read-more-1 {
+    text-decoration: none;
+    position: relative;
+    color: var(--tx-focus-footer);
+}
+
+.focus-section .card .read-more-1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--grey);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 250ms ease-in;
+}
+
+.focus-section .card .read-more-1:hover {
+    color: var(--grey);
+}
+
+.focus-section .card .read-more-1:hover::after {
+    transform: scaleX(1);
+    transform-origin: right;
+    color: var(--tx-focus-footer);
+}
+
+.focus-section .button {
+    /* display: flex; */
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--grey);
+    color: var(--black);
+    padding: 15px 20px;
+    text-decoration: none;
+}
+.focus-section .button:hover{
+    background-color: rgb(163, 161, 161);
+}
+
+
+/* footer */
+footer {
+    margin-top: 30px;
+    color: aliceblue;
+}
+
+footer ul li a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    color: rgb(155, 161, 167);
+}
+
+footer .nav-item {
+    margin-bottom: 2px;
+}
+
+footer .listed {
+    padding: 0px;
+}
